@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      span{
+          width: 200px;
+          height: 100px;
+          display: block;
+      }
+      div.sjz{
+          text-align: center;
+          height:100px;
+          line-height: 100px;
+          width: 200px;
+          background: -webkit-linear-gradient(left top,red,blue,green);
+          border-radius: 50%;
+          box-shadow: 3px 3px 3px 3px #ccc;
+          
+      }
+      div.cc{
+          width: 400px;
+          height: 100px;
+          border: 10px solid #ccc;
+          border-radius: 100px;
+          /* box-sizing: border-box; */
+          /* parseInt()只要第一个是非数字，那么结果就是NAN，第一个为数字，则往后以此查找，到非数字为止 */
+      }
+    </style>
+    <script>
+    // var str='12a3';
+    // console.log(Number(str))
+    // console.log(parseInt(str))
+
+    // js中的数据类型分为两大类
+    // 基本数据了可行（值类型）String nummber boolean null underfined
+    // 引用数据类型[]{}function Data Math 正则...
+    // 基本数据类型操作的都是一个值：引用数据类型操作的都是一个地址。
+
+    function show(e){
+        var a=0;//存储计算出来的和
+        for(var i=0;i<arguments.length;i++){
+        // console.log(arguments[i])//arguments实参集合
+         a += arguments[i]
+        }
+        return a;
+    }
+    var sum = show(1,2,3,4)
+    console.log(sum)
+    //!取反
+    //！！取反后，再取反
+
+    //===绝对比较,判断时，数据类型必须相等
+    //==相对比较,把数据转化成同一类型在比较
+    console.log('0' ==0)
+    console.log([]==false)
+    console.log(![]==false)//先算取非
+    
+
+    var a=0||2 ;//（或）第一个成立则输出，不成立则看后面验证。  前面成立给前面，不成立给后面
+    var b=0&&2;//（且）第一个符合，则选择到第二个验证输出，若第一个不成立则。  前面成立给后面，不成立给后面
+    //布尔(boolean)数据类型有五个是false其他全为ture（0,NAN,'',null,undefined）
+    console.log(a);console.log(b)
+    
+    // var name='真\'好\'',age=18;
+    // var str=`我的名字是${name},我的年龄是${age}`;
+    // console.log(str)
+
+    var str='eqwe石家庄';
+    console.log(str.replace(/eqwe/,"我爱"))
+    
+    typeof(null)//查看数据类型用的
+    //let,事件的循环绑定
+    var bu = document.getElementsByTagName('button');
+    for(let i=1;i<bu.length;i++){
+        bu[i].onclick = function(){
+        // alert(this).html
+        alert(i);
+        }
+    }
+
+    //对象中获取 属性值的两种方式 一种是打点，另一种是[]
+    //[]获取对象，一般适用于属性值是通过变量获取的情况
+
+    // $('button').click(function(){
+    //     var bu = $(button).text();
+    //     alert(this).text();
+    // })
+    // var ary = [1,2,3,4];
+    // var obj = {name:'zf',age:9};
+    // ojb.name;
+    // ojb[a];
+
+    // for(var k in obj ){
+    //    console.log(k);
+    //    console.log(obj[k])
+    // }
+
+    
+    </script>
+    <script>
+    var ary = [1,2,3,4];
+    //sort排序
+    //reverse 数组的反转，返回结果与数组是一个地址
+    ary.sort(function (a,b){
+        return a-b;
+        //返回值a - b 就是一个升序
+        //返回b - a 就是一个降序
+    })
+    //item 数组每一项
+    //index 当前索引号
+    var ary2 = ary.filter(function(item,index){
+        return false;
+    })
+
+    console.log(ary2);
+    var N = ary.push(5,3,4,5,2); //N,传出数组长度
+    console.log(N);
+
+    function of(){
+       return;//return有两个作用，一个是打断函数的执行，另一个是返回结果给外界。
+              //不写return时默认返回underfined
+    }
+    
+    //var 可以声明多次
+    //let 不可以重复声明
+    //const 不可重复声明，并且不可以更改值
+
+    var f = of();
+    console.log(f)
+    //pop,删除数组最后一项
+    //unshift删除数组第一项
+    //shift增加数组第一项
+    
+    
+    </script>
+</head>
+<body>
+    <span>石家庄职业技术学院</span>
+    <span>前段培优班</span>
+   <div class="sjz">石家庄职业技术学院</div>
+   <div class="cc">前段培优班</div>
+   <button onclick="">1</button>
+   <button onclick="">2</button>
+   <button onclick="">3</button>
+   <button onclick="">4</button>
+</body>
+</html>
